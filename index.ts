@@ -6,7 +6,7 @@ import helmet from "helmet";
 import cors from "cors";
 
 //router
-import UserRoutes from "./routes/UserRoutes";
+import UserRoutes from "./src/routes/UserRoutes";
 
 class App {
   public app: Application;
@@ -24,6 +24,7 @@ class App {
     this.app.use(cors());
   }
   protected routes():void{
+    const prefix:string="/api/v1";
     this.app.route("/").get((req:Request, res:Response)=>{
       res.send("hi express TS");
       
@@ -34,11 +35,11 @@ class App {
       
     });
 
-    this.app.use("/users",UserRoutes);
+    this.app.use(`${prefix}`, UserRoutes);
   }
 }
 
-const port: number=4040;
+const port: number=4041;
 const app = new App().app;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
