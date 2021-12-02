@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": false
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "semi":["error","always"]
+    }
+}
