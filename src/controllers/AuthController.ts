@@ -34,6 +34,16 @@ class AuthController {
     
     return res.send({message:'server error'});
   };
+
+  profile = async (req: Request, res: Response): Promise<Response> => {
+    let {username, password} = req.body;
+
+    const user = await db.user.findOne({
+      where: {username}
+    });
+
+    return res.send(user);
+  };
 }
 
 export default new AuthController();
