@@ -1,0 +1,6 @@
+arsitektur aplikasi
+├── api layer -> /routes & /controllers
+├── service layer -> logic
+├── repository layer -> code untuk memanggil model
+├── data access layer -> model
+└── database
