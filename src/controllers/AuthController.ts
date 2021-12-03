@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import PasswordHash from "../util/PasswordHash";
+import PasswordHash from "../utils/PasswordHash";
 const db = require("../db/models");
 
 class AuthController {
