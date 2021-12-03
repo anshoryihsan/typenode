@@ -5,6 +5,8 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 
+require('dotenv').config();
+
 //router
 import UserRoutes from "./src/routes/UserRoutes";
 
@@ -14,7 +16,6 @@ class App {
     this.app = express();
     this.config();
     this.routes();
-    
   }
   protected config():void{
     this.app.use(bodyParser.json());
@@ -39,7 +40,7 @@ class App {
   }
 }
 
-const port: number=4041;
+const port: any= process.env.PORT || 4041 ;
 const app = new App().app;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
