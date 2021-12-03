@@ -9,6 +9,7 @@ require('dotenv').config();
 
 //router
 import UserRoutes from "./src/routes/UserRoutes";
+import AuthRouters from "./src/routes/AuthRouters";
 
 class App {
   public app: Application;
@@ -37,6 +38,7 @@ class App {
     });
 
     this.app.use(`${prefix}`, UserRoutes);
+    this.app.use(`${prefix}`, AuthRouters);
   }
 }
 

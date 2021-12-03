@@ -6,8 +6,8 @@ import AuthController from "../controllers/AuthController";
 class UserRoutes extends BaseRoutes {
 
   public routes():void{
-    this.router.post("/register", AuthController.index);
-    this.router.post("/login", AuthController.create);
+    this.router.post("/register", AuthController.register);
+    this.router.post("/login", AuthController.login);
   }
 }
 
